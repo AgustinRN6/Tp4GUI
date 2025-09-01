@@ -74,6 +74,11 @@ public class Ventana extends javax.swing.JFrame {
         jmRegistro.setText("Registro");
 
         jmiAgregarR.setText("Agregar Registro");
+        jmiAgregarR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAgregarRActionPerformed(evt);
+            }
+        });
         jmRegistro.add(jmiAgregarR);
 
         jMenuBar1.add(jmRegistro);
@@ -129,6 +134,15 @@ public class Ventana extends javax.swing.JFrame {
         jdpEscritorio.add(va);
         jdpEscritorio.moveToFront(va);
     }//GEN-LAST:event_jmiAgregarAActionPerformed
+
+    private void jmiAgregarRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarRActionPerformed
+        jdpEscritorio.removeAll();
+        jdpEscritorio.repaint();
+        VistaInscripcion vi = new VistaInscripcion();
+        vi.setVisible(true);
+        jdpEscritorio.add(vi);
+        jdpEscritorio.moveToFront(vi);
+    }//GEN-LAST:event_jmiAgregarRActionPerformed
 
     /**
      * @param args the command line arguments
