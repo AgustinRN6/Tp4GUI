@@ -29,9 +29,13 @@ public class Ventana extends javax.swing.JFrame {
         jdpEscritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAlumno = new javax.swing.JMenu();
+        jmiAgregarA = new javax.swing.JMenuItem();
         jmMateria = new javax.swing.JMenu();
+        jmiAgregarM = new javax.swing.JMenuItem();
         jmRegistro = new javax.swing.JMenu();
+        jmiAgregarR = new javax.swing.JMenuItem();
         jmSalir = new javax.swing.JMenu();
+        jmiSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,15 +51,46 @@ public class Ventana extends javax.swing.JFrame {
         );
 
         jmAlumno.setText("Alumno");
+
+        jmiAgregarA.setText("Agregar Alumnos");
+        jmiAgregarA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAgregarAActionPerformed(evt);
+            }
+        });
+        jmAlumno.add(jmiAgregarA);
+
         jMenuBar1.add(jmAlumno);
 
         jmMateria.setText("Materia");
+
+        jmiAgregarM.setText("Agregar Materias");
+        jmiAgregarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAgregarMActionPerformed(evt);
+            }
+        });
+        jmMateria.add(jmiAgregarM);
+
         jMenuBar1.add(jmMateria);
 
         jmRegistro.setText("Registro");
+
+        jmiAgregarR.setText("Agregar Registro");
+        jmRegistro.add(jmiAgregarR);
+
         jMenuBar1.add(jmRegistro);
 
         jmSalir.setText("Salir");
+
+        jmiSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Cerrar.png"))); // NOI18N
+        jmiSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiSalirActionPerformed(evt);
+            }
+        });
+        jmSalir.add(jmiSalir);
+
         jMenuBar1.add(jmSalir);
 
         setJMenuBar(jMenuBar1);
@@ -73,6 +108,18 @@ public class Ventana extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmiAgregarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiAgregarAActionPerformed
+
+    private void jmiAgregarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiAgregarMActionPerformed
+
+    private void jmiSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jmiSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,5 +163,9 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JMenu jmMateria;
     private javax.swing.JMenu jmRegistro;
     private javax.swing.JMenu jmSalir;
+    private javax.swing.JMenuItem jmiAgregarA;
+    private javax.swing.JMenuItem jmiAgregarM;
+    private javax.swing.JMenuItem jmiAgregarR;
+    private javax.swing.JMenuItem jmiSalir;
     // End of variables declaration//GEN-END:variables
 }
