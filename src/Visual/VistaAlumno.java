@@ -151,7 +151,7 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
     private void btSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalirActionPerformed
         // TODO add your handling code here:
         System.out.println(evt.getActionCommand()); //registra por consola el evento
-        System.exit(0);
+        setVisible(false);
     }//GEN-LAST:event_btSalirActionPerformed
 
     private void btNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNuevoActionPerformed
