@@ -109,10 +109,6 @@ public class Ventana extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jmiAgregarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmiAgregarAActionPerformed
-
     private void jmiAgregarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarMActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmiAgregarMActionPerformed
@@ -120,6 +116,16 @@ public class Ventana extends javax.swing.JFrame {
     private void jmiSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jmiSalirActionPerformed
+
+    private void jmiAgregarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarAActionPerformed
+        // TODO add your handling code here:
+        jdpEscritorio.removeAll();
+        jdpEscritorio.repaint();
+        VistaAlumno vm = new VistaAlumno();
+        vm.setVisible(true);
+        jdpEscritorio.add(vm);
+        jdpEscritorio.moveToFront(vm);
+    }//GEN-LAST:event_jmiAgregarAActionPerformed
 
     /**
      * @param args the command line arguments
