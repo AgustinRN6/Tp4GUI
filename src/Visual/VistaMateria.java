@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package InternalFrame;
+package Visual;
 
 import Control.Materia;
 
@@ -85,6 +85,11 @@ public class VistaMateria extends javax.swing.JInternalFrame {
 
         btSalir.setForeground(new java.awt.Color(153, 153, 255));
         btSalir.setText("Salir");
+        btSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,7 +122,7 @@ public class VistaMateria extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtAnioMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtAnioMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(64, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -160,15 +165,18 @@ public class VistaMateria extends javax.swing.JInternalFrame {
 
     private void btNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNuevoActionPerformed
         // TODO add your handling code here:
+        
+        System.out.println(evt.getActionCommand());//registra el evento en consola
         //limpiamos txtField(LEGAJO, MATERIA ANIO)
         txtAnioMateria.setText("");
         txtCodMateria.setText("");
         txtNomMateria.setText("");
-        
     }//GEN-LAST:event_btNuevoActionPerformed
 
     private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
         // TODO add your handling code here:
+        
+        System.out.println(evt.getActionCommand());//registra el evento en consola
         //Guardamos lo ingresado por el usuario en JTextField en variables faciles de leer.
         int anioM = Integer.parseInt(txtAnioMateria.getText()), codigoM = Integer.parseInt(txtAnioMateria.getText());
         String nombreM= txtNomMateria.getText();
@@ -176,6 +184,12 @@ public class VistaMateria extends javax.swing.JInternalFrame {
         Materia m = new Materia(codigoM,  nombreM, anioM);
         
     }//GEN-LAST:event_btGuardarActionPerformed
+
+    private void btSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalirActionPerformed
+        // TODO add your handling code here:
+        System.out.println(evt.getActionCommand());//registra el evento en consola
+        setVisible(false);//cierra la ventana
+    }//GEN-LAST:event_btSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -108,6 +108,12 @@ public class Ventana extends javax.swing.JFrame {
 
     private void jmiAgregarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarMActionPerformed
         // TODO add your handling code here:
+        jdpEscritorio.removeAll();//REMUEVE TODOS LOS COMPONENTES DEL CONTENEDOR
+        jdpEscritorio.repaint();
+        VistaMateria vm = new VistaMateria();//CREAMOS LA VENTANA
+        vm.setVisible(true);//HACEMOS LA VENTANA VISIBLE
+        jdpEscritorio.add(vm);//AGREGA EL COMPONENTE
+        jdpEscritorio.moveToFront(vm);
     }//GEN-LAST:event_jmiAgregarMActionPerformed
 
     private void jmiSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSalirActionPerformed
@@ -118,10 +124,10 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
         jdpEscritorio.removeAll();
         jdpEscritorio.repaint();
-        VistaAlumno vm = new VistaAlumno();
-        vm.setVisible(true);
-        jdpEscritorio.add(vm);
-        jdpEscritorio.moveToFront(vm);
+        VistaAlumno va = new VistaAlumno();
+        va.setVisible(true);
+        jdpEscritorio.add(va);
+        jdpEscritorio.moveToFront(va);
     }//GEN-LAST:event_jmiAgregarAActionPerformed
 
     /**
