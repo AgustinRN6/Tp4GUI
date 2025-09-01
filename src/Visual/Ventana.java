@@ -4,10 +4,11 @@
  */
 package Visual;
 
-/**
- *
- * @author Agustin
- */
+//importo por las dudas
+
+import InternalFrame.Alumnos;
+
+
 public class Ventana extends javax.swing.JFrame {
 
     /**
@@ -111,6 +112,7 @@ public class Ventana extends javax.swing.JFrame {
 
     private void jmiAgregarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarAActionPerformed
         // TODO add your handling code here:
+        new Alumnos().setVisible(true);
     }//GEN-LAST:event_jmiAgregarAActionPerformed
 
     private void jmiAgregarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarMActionPerformed
