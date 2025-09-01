@@ -142,12 +142,15 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         System.out.println(evt.getActionCommand());//registra por consola el evento
         //Parseamos y almacenamos lo que ingreso el usuario en sus tipos de varible
+        try{
         int legajo= Integer.parseInt(txtLegajo.getText());
         String nom= txtNombre.getText() , apel = txtApellido.getText();
         //Instanciamos al alumno
         Alumno a1um= new Alumno(legajo, nom, apel);
         JOptionPane.showMessageDialog(null, "El alumno ha sido agregado con exito!!!!");
-        
+        }catch(java.lang.NumberFormatException error){
+             JOptionPane.showMessageDialog(null, "Usted ingreso un dato en el formato Incorrecto");
+        }
         
     }//GEN-LAST:event_btGuardarActionPerformed
 

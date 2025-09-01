@@ -5,6 +5,7 @@
 package Visual;
 
 import Control.Materia;
+import javax.swing.JOptionPane;
 
 
 public class VistaMateria extends javax.swing.JInternalFrame {
@@ -175,14 +176,18 @@ public class VistaMateria extends javax.swing.JInternalFrame {
 
     private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
         // TODO add your handling code here:
-        
+        try{
         System.out.println(evt.getActionCommand());//registra el evento en consola
         //Guardamos lo ingresado por el usuario en JTextField en variables faciles de leer.
         int anioM = Integer.parseInt(txtAnioMateria.getText()), codigoM = Integer.parseInt(txtAnioMateria.getText());
         String nombreM= txtNomMateria.getText();
+        
         //Instanciamos materia
         Materia m = new Materia(codigoM,  nombreM, anioM);
-        
+        JOptionPane.showMessageDialog(null, "La materia ha sido agregada con exito!!!!");
+        }catch(java.lang.NumberFormatException error){
+                JOptionPane.showMessageDialog(null, "Usted ingreso un dato en el formato Incorrecto");
+        }
     }//GEN-LAST:event_btGuardarActionPerformed
 
     private void btSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalirActionPerformed
