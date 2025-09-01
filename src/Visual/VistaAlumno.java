@@ -59,6 +59,7 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
         lbLegajo.setText("Legajo");
         lbLegajo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        btGuardar.setForeground(new java.awt.Color(153, 153, 255));
         btGuardar.setText("Guardar");
         btGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +67,7 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
             }
         });
 
+        btNuevo.setForeground(new java.awt.Color(153, 153, 255));
         btNuevo.setText("Nuevo");
         btNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +75,7 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
             }
         });
 
+        btSalir.setForeground(new java.awt.Color(153, 153, 255));
         btSalir.setText("Salir");
         btSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

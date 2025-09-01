@@ -4,10 +4,7 @@
  */
 package Visual;
 
-/**
- *
- * @author Agustin
- */
+
 public class Ventana extends javax.swing.JFrame {
 
     /**
