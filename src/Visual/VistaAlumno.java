@@ -2,15 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package InternalFrame;
+package Visual;
  
 import Control.Alumno;
-public class Alumnos extends javax.swing.JInternalFrame {
+import javax.swing.JOptionPane;
+public class VistaAlumno extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Alumnos
      */
-    public Alumnos() {
+    public VistaAlumno() {
         initComponents();
     }
 
@@ -142,6 +143,7 @@ public class Alumnos extends javax.swing.JInternalFrame {
         String nom= txtNombre.getText() , apel = txtApellido.getText();
         //Instanciamos al alumno
         Alumno a1um= new Alumno(legajo, nom, apel);
+        JOptionPane.showMessageDialog(null, "El alumno ha sido agregado con exito!!!!");
         
         
     }//GEN-LAST:event_btGuardarActionPerformed
