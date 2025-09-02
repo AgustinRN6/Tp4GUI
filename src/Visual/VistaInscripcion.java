@@ -2,6 +2,8 @@
 package Visual;
 
 import Control.*;
+import java.util.Iterator;
+import javax.swing.JOptionPane;
 
 public class VistaInscripcion extends javax.swing.JInternalFrame {
 
@@ -140,13 +142,30 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
 
     private void jbInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInscribirActionPerformed
         
-        //Inscribir al alumno a la materia
-        Alumno al = (Alumno)jcbElegirA.getSelectedItem(); //toma el objeto seleccionado en la lista de alumnos
-        Materia ma = (Materia)jcbElegirM.getSelectedItem(); //toma el objeto seleccionado en la lista de materias
-        while(jcbElegirA.getSelectedIndex() == -1 || jcbElegirA.getSelectedIndex() == -1) {
-
+        try {
+            //Inscribir al alumno a la materia
+            Alumno al = (Alumno) jcbElegirA.getSelectedItem(); //toma el objeto seleccionado en la lista de alumnos
+            Materia ma = (Materia) jcbElegirM.getSelectedItem(); //toma el objeto seleccionado en la lista de materias
+            //Comprueba que NO estén vacios los casilleros
+            while (jcbElegirA.getSelectedIndex() == -1 || jcbElegirA.getSelectedIndex() == -1) {
+                String SinDatos = "No tiene datos para inscribir";
+                JOptionPane.showMessageDialog(null, SinDatos);
+            }
+            //Comprueba que NO se haya inscripto el alumno en la misma materia
+            /*boolean alumnoMismaMateria = false;
+            Iterator<Materia> aMM = al.getMaterias().iterator();
+            while()
+            while(alumnoMismaMateria) {
+                String mismoDatos = "El alumno ya está inscripto en la materia";
+                JOptionPane.showMessageDialog(null, mismoDatos);                
+                
+            }*/
+            al.agregarMateria(ma); // agrega la materia al alumno
+        }catch(java.lang.ClassCastException SinObjeto) {
+            String SinDatos = "No condice con los formatos correspondientes a lo seleccionado";
+            JOptionPane.showMessageDialog(null, SinDatos);
         }
-        al.agregarMateria(ma); // agrega la materia al alumno
+
     }//GEN-LAST:event_jbInscribirActionPerformed
 
 
