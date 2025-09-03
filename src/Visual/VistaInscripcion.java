@@ -173,8 +173,8 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jbInscribir;
     private javax.swing.JButton jbSalir;
-    private javax.swing.JComboBox<String> jcbElegirA;
-    private javax.swing.JComboBox<String> jcbElegirM;
+    private javax.swing.JComboBox<Alumno> jcbElegirA;
+    private javax.swing.JComboBox<Materia> jcbElegirM;
     private javax.swing.JLabel jlIndice;
     private javax.swing.JLabel jlelegirA;
     private javax.swing.JLabel jlelegirM;
@@ -184,14 +184,14 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         Iterator<Materia> listarMaterias = Ventana.materias.iterator();
         while(listarMaterias.hasNext()) {
             Materia cargar = listarMaterias.next();
-            jcbElegirM.addItem(cargar.toString());
+            jcbElegirM.addItem(cargar);
         }        
     }
     private void cargarAlumnos() {
         Iterator<Alumno> listarAlumnos = Ventana.alumnos.iterator();
         while (listarAlumnos.hasNext()) {
             Alumno cargar = listarAlumnos.next();
-            jcbElegirA.addItem(cargar.toString());
+            jcbElegirA.addItem(cargar);
         }
     }
 }
