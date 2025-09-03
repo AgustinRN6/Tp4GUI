@@ -12,6 +12,8 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
      */
     public VistaInscripcion() {
         initComponents();
+        cargarMaterias();
+        cargarAlumnos();
     }
 
     /**
@@ -43,7 +45,6 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         jlelegirA.setForeground(new java.awt.Color(0, 204, 204));
         jlelegirA.setText("Elija un alumno");
 
-        jcbElegirM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jcbElegirM.setToolTipText("");
         jcbElegirM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,7 +52,6 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
             }
         });
 
-        jcbElegirA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jcbElegirA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbElegirAActionPerformed(evt);
@@ -147,9 +147,11 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
             Alumno al = (Alumno) jcbElegirA.getSelectedItem(); //toma el objeto seleccionado en la lista de alumnos
             Materia ma = (Materia) jcbElegirM.getSelectedItem(); //toma el objeto seleccionado en la lista de materias
             //Comprueba que NO estén vacios los casilleros
-            while (jcbElegirA.getSelectedIndex() == -1 || jcbElegirA.getSelectedIndex() == -1) {
+            if (jcbElegirA.getSelectedIndex() == -1 || jcbElegirA.getSelectedIndex() == -1) {
                 String SinDatos = "No tiene datos para inscribir";
                 JOptionPane.showMessageDialog(null, SinDatos);
+            } else {
+                al.agregarMateria(ma); // agrega la materia al alumno
             }
             //Comprueba que NO se haya inscripto el alumno en la misma materia
             /*boolean alumnoMismaMateria = false;
@@ -159,8 +161,7 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
                 String mismoDatos = "El alumno ya está inscripto en la materia";
                 JOptionPane.showMessageDialog(null, mismoDatos);                
                 
-            }*/
-            al.agregarMateria(ma); // agrega la materia al alumno
+            }*/ 
         }catch(java.lang.ClassCastException SinObjeto) {
             String SinDatos = "No condice con los formatos correspondientes a lo seleccionado";
             JOptionPane.showMessageDialog(null, SinDatos);
@@ -178,4 +179,19 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlelegirA;
     private javax.swing.JLabel jlelegirM;
     // End of variables declaration//GEN-END:variables
+    //Cargar las materias y alumnos del HashSet
+    private void cargarMaterias() {
+        Iterator<Materia> listarMaterias = Ventana.materias.iterator();
+        while(listarMaterias.hasNext()) {
+            Materia cargar = listarMaterias.next();
+            jcbElegirM.addItem(cargar.toString());
+        }        
+    }
+    private void cargarAlumnos() {
+        Iterator<Alumno> listarAlumnos = Ventana.alumnos.iterator();
+        while (listarAlumnos.hasNext()) {
+            Alumno cargar = listarAlumnos.next();
+            jcbElegirA.addItem(cargar.toString());
+        }
+    }
 }

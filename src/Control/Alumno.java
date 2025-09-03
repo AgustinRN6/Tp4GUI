@@ -42,7 +42,7 @@ public class Alumno {
     return materias.size();//retorna el tamaño del Arreglo.
     }
     public String toString(){
-    return "Nombre: "+ nombre +", Apellido: "+", Legajo: "+ nrLegajo;
+    return apellido + " " + nombre;
     }
     
 }

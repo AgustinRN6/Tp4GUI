@@ -38,7 +38,7 @@ public class Materia {
         this.anio = anio;
     }
     public String toString(){
-        return "Materia: "+nombre+" anio"+ anio;
+        return nombre;
     }
     
 }
