@@ -38,6 +38,11 @@ public class Alumno {
     public void agregarMateria(Materia m){
         materias.add(m);//Agrega la materia al HashSet.
     }
+
+    public HashSet<Materia> getMaterias() {
+        return materias;
+    }
+
     public int cantMateria(){
     return materias.size();//retorna el tamaño del Arreglo.
     }

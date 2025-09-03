@@ -146,22 +146,30 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
             //Inscribir al alumno a la materia
             Alumno al = (Alumno) jcbElegirA.getSelectedItem(); //toma el objeto seleccionado en la lista de alumnos
             Materia ma = (Materia) jcbElegirM.getSelectedItem(); //toma el objeto seleccionado en la lista de materias
+            
+            //Comprueba que NO se haya inscripto el alumno en la misma materia
+            boolean alumnoMismaMateria = false;
+            Iterator<Materia> aMM = al.getMaterias().iterator();
+            while (aMM.hasNext()) {
+                if (aMM.next().getIdMateria() == ma.getIdMateria()) {
+                    alumnoMismaMateria = true;
+                }
+            }
+            if (alumnoMismaMateria) {
+                String mismoDatos = "El alumno ya está inscripto en la materia";
+                JOptionPane.showMessageDialog(null, mismoDatos);
+
+            }
             //Comprueba que NO estén vacios los casilleros
-            if (jcbElegirA.getSelectedIndex() == -1 || jcbElegirA.getSelectedIndex() == -1) {
+            if (jcbElegirA.getSelectedIndex() == -1 || jcbElegirM.getSelectedIndex() == -1) {
                 String SinDatos = "No tiene datos para inscribir";
                 JOptionPane.showMessageDialog(null, SinDatos);
-            } else {
+            } else if(!alumnoMismaMateria) {
                 al.agregarMateria(ma); // agrega la materia al alumno
+                String Cargar = "Se ha cargado la materia en el alumno exitosamente!";
+                JOptionPane.showMessageDialog(null, Cargar);
             }
-            //Comprueba que NO se haya inscripto el alumno en la misma materia
-            /*boolean alumnoMismaMateria = false;
-            Iterator<Materia> aMM = al.getMaterias().iterator();
-            while()
-            while(alumnoMismaMateria) {
-                String mismoDatos = "El alumno ya está inscripto en la materia";
-                JOptionPane.showMessageDialog(null, mismoDatos);                
-                
-            }*/ 
+
         }catch(java.lang.ClassCastException SinObjeto) {
             String SinDatos = "No condice con los formatos correspondientes a lo seleccionado";
             JOptionPane.showMessageDialog(null, SinDatos);
