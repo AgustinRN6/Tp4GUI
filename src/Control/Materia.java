@@ -37,6 +37,8 @@ public class Materia {
     public void setAnio(int anio) {
         this.anio = anio;
     }
-    
+    public String toString(){
+        return "Materia: "+nombre+" anio"+ anio;
+    }
     
 }
