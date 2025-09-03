@@ -4,6 +4,9 @@
  */
 package Visual;
 
+import Control.*;
+import java.util.HashSet;
+
 
 public class Ventana extends javax.swing.JFrame {
 
@@ -179,6 +182,9 @@ public class Ventana extends javax.swing.JFrame {
         });
     }
 
+    //Variables HashSet 
+    public static HashSet<Alumno> alumnos = new HashSet();
+    public static HashSet<Materia> materias = new HashSet();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JDesktopPane jdpEscritorio;
