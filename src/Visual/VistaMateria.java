@@ -184,6 +184,7 @@ public class VistaMateria extends javax.swing.JInternalFrame {
         
         //Instanciamos materia
         Materia m = new Materia(codigoM,  nombreM, anioM);
+        Ventana.materias.add(m);
         JOptionPane.showMessageDialog(null, "La materia ha sido agregada con exito!!!!");
         }catch(java.lang.NumberFormatException error){
                 JOptionPane.showMessageDialog(null, "Usted ingreso un dato en el formato Incorrecto");
